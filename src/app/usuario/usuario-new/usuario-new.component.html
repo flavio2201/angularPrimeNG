@@ -1,21 +1,36 @@
 <h3>Add Usuario</h3>
 <div class="ui-g ui-fluid">
-    <div class="ui-g-12 ui-md-4">
-        <div class="ui-inputgroup">
-            <input type="text" pInputText placeholder="Nome" [(ngModel)]="usuario.nome">
-        </div>
+  <div class="ui-g-12 ui-md-4">
+    <div class="ui-inputgroup">
+      <input
+        type="text"
+        pInputText
+        placeholder="Nome"
+        [(ngModel)]="usuario.name"
+      />
     </div>
+  </div>
 
-    <div class="ui-g-12 ui-md-4">
-        <div class="ui-inputgroup">
-            <input type="email" pInputText placeholder="Email" [(ngModel)]="usuario.email">
-        </div>
+  <div class="ui-g-12 ui-md-4">
+    <div class="ui-inputgroup">
+      <input
+        type="email"
+        pInputText
+        placeholder="Email"
+        [(ngModel)]="usuario.email"
+      />
     </div>
+  </div>
 
-    <div class="ui-g-12 ui-md-4">
-        <div class="ui-inputgroup">
-            <button pButton type="button" icon="pi pi-check" class="ui-button-success" (click)="salvar()"></button>
-            <button pButton type="button" icon="pi pi-close" class="ui-button-danger"></button>
-        </div>
+  <div class="ui-g-12 ui-md-4">
+    <div class="ui-inputgroup">
+      <button
+        pButton
+        type="button"
+        icon="pi pi-check"
+        class="ui-button-success"
+        (click)="salvar()"
+      ></button>
     </div>
+  </div>
 </div>

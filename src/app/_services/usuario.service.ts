@@ -1,21 +1,20 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Usuario } from '../_models/usuario';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Usuario } from "../_models/usuario";
+import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class UsuarioService {
+  private url = environment.host + "user";
 
-  private url = environment.host + 'usuario';
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  public getUsuario(): Usuario{
+  public getUsuario(): Usuario {
     const usuario = new Usuario();
-    usuario.nome = "Flavio";
+    usuario.name = "Flavio";
     usuario.email = "flavio2201@gmail.com";
     return usuario;
   }
@@ -28,6 +27,6 @@ export class UsuarioService {
     return this.http.post<Usuario>(this.url, usuario);
   }
   public delete(id: string): Observable<any> {
-    return this.http.delete(this.url + '/' + id);
+    return this.http.delete(this.url + "/" + id);
   }
 }
