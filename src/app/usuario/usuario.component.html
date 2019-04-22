@@ -3,15 +3,21 @@
     <tr>
       <th>Nome</th>
       <th>Email</th>
-      <th>Acões</th>
+      <th class="text-center">Acões</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-usuario>
     <tr>
       <td>{{ usuario.name }}</td>
       <td>{{ usuario.email }}</td>
-      <td>
+      <td class="text-center mt-1">
         <p-button
+          center
+          label="editar"
+          (click)="deletar(usuario.id)"
+        ></p-button>
+        <p-button
+          center
           label="deletar"
           (click)="deletar(usuario.id)"
           styleClass="ui-button-danger"
